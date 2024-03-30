@@ -1,0 +1,76 @@
+@import "_Storage";
+
+.Signup {
+  height: 100vh;
+  width: 100%;
+  @include flex;
+
+  .left {
+    background: linear-gradient(45deg, $left, $right);
+    width: 50%;
+    height: 100%;
+    @include flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    padding: 6rem 2rem;
+    
+
+    .heading1{
+        font-size: 6rem;
+        letter-spacing: 0.5rem;
+
+        &:hover{
+            text-decoration: underline;
+            //  font-style: italic;
+            
+            
+        }
+    }
+    .heading2{
+        font-size: 4rem;
+        margin-bottom: 3rem;
+        letter-spacing: 0.5rem;
+
+        &:hover{
+            text-decoration: underline;
+          
+        }
+    }
+
+    .signpara{
+        
+        font-size: 1.5rem;
+        text-transform: capitalize;
+
+    }
+  }
+
+  .right {
+    width: 50%;
+    height: 100%;
+    @include flex;
+    // align-items: end;
+    // justify-content: end;
+
+    form{
+        width: 50%;
+        height: 70%;
+
+        @include flex;
+        // align-items: start;
+        flex-direction: column;
+        border: 2px solid red;
+        gap: 1rem;
+
+        
+      
+
+            input{
+                // margin: 1rem;
+                padding: 0.6rem;
+            }
+        
+    }
+  }
+}

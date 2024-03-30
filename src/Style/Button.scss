@@ -1,0 +1,31 @@
+@import "_Storage";
+
+
+
+   button {
+  background: none;
+  font-size: 0.6rem;
+  padding: 0.6rem;
+  cursor: pointer;
+    // border: 1px solid black;
+}
+
+.border-gradient {
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(to right, $left, $right) border-box;
+  border-radius: 10%;
+  border: 3px solid transparent;
+
+
+
+  &:hover{
+
+    background: linear-gradient(to right , $right,$left) padding-box,
+                linear-gradient($bgwhite , $bgwhite) border-box;
+                color: white;
+
+  }
+
+
+   
+}

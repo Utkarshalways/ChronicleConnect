@@ -1,0 +1,11 @@
+
+//Shortcut Methods
+@mixin flex() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+$left: #00ADB5;
+$right: #222831;
+$bgwhite : #fff;
