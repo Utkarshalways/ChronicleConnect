@@ -40,6 +40,7 @@ const SignUp = () => {
           />
 
           <Button Title="Sign Up" />
+          
         </form>
       </div>
     </div>
