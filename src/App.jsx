@@ -1,5 +1,6 @@
 
 import SignUp from "./Components/SignUp"
+import Header from "./Components/Header";
 
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
 
   return (
     <>
-     
+     <Header/>
       <SignUp />
     </>
   );
