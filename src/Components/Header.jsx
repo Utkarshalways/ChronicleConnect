@@ -5,8 +5,8 @@ const Header = () => {
 
   const [navOpen, setnavOpen] = useState(false);
   return (
-    <header className="bg-purple-800 p-2 flex gap-2 items-center justify-between text-white">
-      <div className="left flex gap-2 items-center mx-4">
+    <header className="bg-purple-800 p-4 flex gap-2 items-center justify-between text-white">
+      <div className="left flex gap-2 items-center ">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png"
           alt=""
@@ -34,7 +34,7 @@ const Header = () => {
             onClick={() => setnavOpen(false)} // change isNavOpen state to false to close the menu
           >
             <svg
-              className="h-8 w-8 text-gray-600"
+              className="h-8 w-8 text-black"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -87,6 +87,7 @@ const Header = () => {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+        
       }
     `}</style>
     </header>
