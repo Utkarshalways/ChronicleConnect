@@ -24,8 +24,12 @@ function Copyright(props) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link
+        color="inherit"
+        href="https://github.com/Utkarshalways"
+        target="_blank"
+      >
+        Chronicle Connect
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -99,6 +103,7 @@ export default function SignInSide() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+
               />
               <TextField
                 margin="normal"

@@ -5,7 +5,7 @@ const Header = () => {
 
   const [navOpen, setnavOpen] = useState(false);
   return (
-    <header className="bg-purple-800 p-4 flex gap-2 items-center justify-between text-white">
+    <header className="bg-purple-800 p-4 flex gap-2 items-center justify-between text-white sticky">
       <div className="left flex gap-2 items-center ">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png"
@@ -26,7 +26,7 @@ const Header = () => {
           <span className="block h-0.5 w-8 animate-pulse bg-white"></span>
         </div>
 
-        <div className={navOpen ? "showMenuNav" : "hideMenuNav"}>
+        <div className={navOpen ? "showMenuNav bg-purple-400 " : "hideMenuNav"}>
           {" "}
           
           <div
@@ -46,15 +46,16 @@ const Header = () => {
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           </div>
-          <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px] bg-purple-100 text-black">
+          <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px] bg-purple-100 text-black p-4">
             <li className="border-b border-gray-400 my-8 uppercase">
               <a href="/about">About</a>
             </li>
             <li className="border-b border-gray-400 my-8 uppercase">
-              <a href="/portfolio">Portfolio</a>
+              <a href="/portfolio">
+              Posts</a>
             </li>
             <li className="border-b border-gray-400 my-8 uppercase">
-              <a href="/contact">Contact</a>
+              <a href="/contact">Sign in</a>
             </li>
           </ul>
         </div>
@@ -87,6 +88,8 @@ const Header = () => {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+        {/* opacity:0.8; */}
+        
         
       }
     `}</style>

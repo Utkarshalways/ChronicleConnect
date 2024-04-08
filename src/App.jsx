@@ -7,7 +7,7 @@ function App() {
   return (
     <>
      <Header/>
-      {/* <SignUp /> */}
+      <SignUp />
       {/* <Button Title="Hello world" /> */}
 
     </>
