@@ -2,27 +2,25 @@
 import React, { useEffect, useState } from 'react';
 import { databases } from "@/lib/appwrite";
 import { Query,Models } from "appwrite"; // Import Query here
-import { useUser } from "@clerk/nextjs";
+
 import { AuroraBackground } from '@/components/ui/aurora-background' 
 
+
 const HomePage = () => {
-  const { user, isLoaded } = useUser();
+
   const [stories, setStories] = useState<Models.Document[]>([]);
   const [loading, setLoading] = useState(false);
 
   const data = {
     Story: "HEllo this is my story and it was more and more beautifull visit there",
-    UserEmail: user?.emailAddresses[0]?.emailAddress ?? "NoMail@example.com",
+    UserEmail: "NoMail@example.com",
     ImageUrl:
       "https://images.unsplash.com/photo-1744018195752-276f4f77cc7a?q=80&w=399&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    UserId: user?.id ?? "unknown",
+    
   };
 
   async function handleButtonClick() {
-    if (!isLoaded || !user) {
-      alert("Please log in first.");
-      return;
-    }
+   
     try {
       await databases.createDocument(
         "6878b7460026532d43cf",
@@ -58,11 +56,7 @@ const HomePage = () => {
     }
   }
 
-  useEffect(() => {
-    if (!isLoaded || !user) return;
-    fetchStories();
-    // eslint-disable-next-line
-  }, [isLoaded, user]);
+
 
   return (
     
@@ -73,6 +67,9 @@ const HomePage = () => {
       >
         Click Here
       </button>
+
+
+      
     
 
       <div className="mt-8">
@@ -96,6 +93,8 @@ const HomePage = () => {
             </li>
           ))}
         </ul>
+
+
       </div>
         </div>
     
@@ -103,3 +102,8 @@ const HomePage = () => {
 }
 
 export default HomePage;
+
+
+
+
+

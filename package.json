@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@blocknote/core": "^0.34.0",
+    "@blocknote/mantine": "^0.34.0",
+    "@blocknote/react": "^0.34.0",
     "@clerk/nextjs": "^6.25.3",
     "appwrite": "^18.1.1",
     "clsx": "^2.1.1",
