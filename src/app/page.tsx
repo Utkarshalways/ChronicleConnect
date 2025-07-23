@@ -1,10 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { databases } from "@/lib/appwrite";
-import { Query,Models } from "appwrite"; // Import Query here
-
-import { AuroraBackground } from '@/components/ui/aurora-background' 
-
+import { Query,Models } from "appwrite"; 
 
 const HomePage = () => {
 
@@ -61,6 +58,8 @@ const HomePage = () => {
   return (
     
       <div>
+
+    
       <button
         onClick={handleButtonClick}
         className="mt-6 px-4 py-2 bg-blue-600 text-white rounded cursor-pointer"

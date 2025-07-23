@@ -98,7 +98,7 @@ export default function FileUploadForm() {
   };
 
   return (
-    <div className="max-w-lg w-full mx-auto py-12">
+    <div className=" w-full mx-auto">
       <form onSubmit={handleSubmit} className="space-y-4">
         <h1 className="text-2xl font-bold mb-2">Post with Images &amp; Rich Text</h1>
         <input
