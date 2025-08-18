@@ -3,14 +3,15 @@ import React, { useEffect, useState } from 'react';
 import { databases } from "@/lib/appwrite";
 import { Query,Models } from "appwrite"; 
 
+
 const HomePage = () => {
 
   const [stories, setStories] = useState<Models.Document[]>([]);
   const [loading, setLoading] = useState(false);
+  const apiUrl: string = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID ?? "";
 
   const data = {
     Story: "HEllo this is my story and it was more and more beautifull visit there",
-    UserEmail: "NoMail@example.com",
     ImageUrl:
       "https://images.unsplash.com/photo-1744018195752-276f4f77cc7a?q=80&w=399&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     
@@ -20,7 +21,7 @@ const HomePage = () => {
    
     try {
       await databases.createDocument(
-        "6878b7460026532d43cf",
+        apiUrl,
         "6878da23000e1e2ce450",
         "unique()",
         data
@@ -44,7 +45,7 @@ const HomePage = () => {
         //   Query.equal("UserId", user?.id ?? "")
         // ]
       );
-      console.log(response.documents)
+      console.log('This is the response',response.documents)
       setStories(response.documents);
     } catch (err) {
       console.error("Failed to fetch stories:", err);
@@ -53,7 +54,11 @@ const HomePage = () => {
     }
   }
 
-
+  useEffect(()=>{
+    fetchStories();
+  },[])
+  
+  console.log(stories)
 
   return (
     
@@ -68,8 +73,6 @@ const HomePage = () => {
       </button>
 
 
-      
-    
 
       <div className="mt-8">
         <h2 className="text-xl font-bold">Your Stories</h2>
@@ -77,15 +80,19 @@ const HomePage = () => {
         {!loading && stories.length === 0 && <p>No stories found.</p>}
         <ul>
           {stories.map((story) => (
+           
             <li key={story.$id} className="my-4 p-4 border rounded">
+              <p>
+                {story.$id}
+              </p>
               <p>{story.Story}</p>
-              <p>{story.UserEmail}</p>
+              
               <p>Total Upvotes :- {story.Upvotes}</p>
               
               <img src={story.ImageUrl} alt="story" className="w-32 mt-2" />
 
               <div className="text-xs text-gray-500 mt-1">
-                Created: {story.$createdAt}
+                Created: {story.$createdAt} f
                 <br/>
                 updated: {story.$updatedAt}
               </div>

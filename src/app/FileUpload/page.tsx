@@ -40,7 +40,6 @@ export default function FileUploadForm() {
     if (inputRef.current) inputRef.current.value = '';
   };
 
-  // Remove a selected (not yet uploaded) image
   const handleRemoveImage = (idx: number) => {
     setSelectedFiles(files => files.filter((_, i) => i !== idx));
     setImagePreviews(previews => {
